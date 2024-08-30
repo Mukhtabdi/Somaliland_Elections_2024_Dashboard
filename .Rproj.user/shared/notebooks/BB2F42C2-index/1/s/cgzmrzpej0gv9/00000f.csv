@@ -1,0 +1,6 @@
+"0","tot_pol_2021 <- sum(voters$tot_poll_stations_2024)"
+"0","valueBox("
+"0","  value = scales::comma(tot_pol_2021),"
+"0","  caption = ""Total Polling Stations"","
+"0","  color = ""blue""                                "
+"0",")"

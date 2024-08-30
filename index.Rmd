@@ -1,0 +1,172 @@
+---
+title: "Registered Voters and Polling Stations in Somaliland for the 2024 Presidential and National Party Elections"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: columns
+---
+
+```{r setup, include=FALSE}
+# Load libraries
+library(flexdashboard)
+library(tidyverse)
+library(plotly) 
+library(sf)
+library(gt)
+library(leaflet)
+library(leaflet.extras)
+library(scales)
+```
+
+```{r load_data, include = FALSE}
+# Load datasets
+sladmin1 <- st_read("F:/OneDrive/Mukhtarabdi.com/R-DataVis/Somaliland_Elections_2024_Dashboard/data/Somaliland-Admin1.shp", quiet = TRUE)
+voters <- read_csv("F:/OneDrive/Mukhtarabdi.com/R-DataVis/Somaliland_Elections_2024_Dashboard/data/total-registered-voters-per-district-2017-2024.csv")
+```
+
+## Column 1
+
+### **Total Registered Voters for 2024 Elections**
+
+```{r}
+tot_regis_2024 <- sum(voters$`2024`, na.rm = TRUE)
+valueBox(
+  value = scales::comma(tot_regis_2024),    
+  caption = "Total Registered Voters",        
+  color = "blue"                                
+)
+
+```
+
+
+### **Total Polling Stations by District**
+
+```{r}
+voters %>% 
+  select(Region, District, tot_poll_stations_2024) %>% 
+  gt() %>% 
+  opt_interactive(use_filters = TRUE) %>% 
+  tab_options(table.font.size=12) %>% 
+   cols_label(Region = "Regions",
+              District = "Electoral District",
+              tot_poll_stations_2024 = "Total Polling Stations") %>%
+  tab_style(style = cell_text(weight = "bold"),
+            locations = cells_column_labels(everything())) %>%
+  fmt_number(columns = vars(tot_poll_stations_2024),
+             decimals = 0) %>%
+  data_color(columns = vars(tot_poll_stations_2024),
+             colors = scales::col_numeric(palette = c("lightblue", "darkblue"),
+                                          domain = NULL))
+```
+
+### **About the Dashboard** {data-height="150"}
+
+This dashboard provides insights on **Somaliland's** presidential, and national party elections scheduled for November 13th, 2024. 
+
+**Designer**: Mukhtar Abdi
+
+- **Contact**: [mukhtarj.abdi@gmail.com](mailto:mukhtarj.abdi@gmail.com)
+- **LinkedIn**: [https://www.linkedin.com/in/mukhtaabdi/]
+
+**Data source**: Somaliland National Electoral Commision (SLNEC)
+
+## Column 2
+
+### **Total polling stations in 2024**
+
+```{r}
+tot_pol_2021 <- sum(voters$tot_poll_stations_2024)
+valueBox(
+  value = scales::comma(tot_pol_2021),
+  caption = "Total Polling Stations",
+  color = "blue"                                
+)
+
+```
+
+### **Total Registered Voters by Electoral District**
+
+```{r}
+# Produce static map using ggplot2
+plt1 <- voters %>% 
+  drop_na() %>% 
+  arrange(desc(`2024`)) %>% 
+  ggplot() +
+  geom_col(aes(x = `2024`, y = reorder(District, `2024`)), 
+           fill = "blue") + 
+  scale_x_continuous(labels = function(x) format(x, scientific = FALSE, big.mark = ",")) +
+  labs(x = "Total Registered Voters", y = "Electoral District") +
+  theme_minimal()
+
+# Make the chart interactive using plotly
+ggplotly(plt1)
+```
+
+## column 3
+
+### **Electoral districts in Somaliland**
+
+```{r}
+# Get electoral districts
+elecdist <- voters %>% 
+  select(Region, long_X, Lat_Y, District) %>%
+  drop_na() %>% 
+  st_as_sf(coords = c(2:3), crs = 4326)
+```
+
+
+```{r}
+leaflet() %>%
+  addTiles() %>%
+  setView(lng = 46 , lat = 9.8, zoom = 7) %>% 
+  leaflet.extras::addResetMapButton() %>% 
+  # Add polygon data to map
+  addPolygons(data = sladmin1, 
+              color = "black", 
+              opacity = 0.5,
+              weight = 2,
+              fill = NA,
+              label = ~Region_nam) %>% 
+  #Add point data to the map
+  addCircleMarkers(data = elecdist,
+                   radius = 6,
+                   color = "blue",
+                   fillColor = "blue",
+                   fillOpacity = 1,
+                   stroke = FALSE,
+                   popup = ~paste("<b>Electoral District:</b>", District)) %>% 
+# Add labels to point data
+  addLabelOnlyMarkers(data = elecdist,
+                      label = ~District,
+                      labelOptions = labelOptions(noHide = TRUE,
+                                                   direction = 'top',
+                                                   textsize = "8px",
+                                                   opacity = 0.8)
+                      )
+
+  
+```
+
+### **Total Registered Voters by Region**
+
+```{r}
+plt2 <- voters %>%
+  drop_na() %>% 
+  group_by(Region) %>%
+  summarise(
+    total_2017 = sum(`2017`, na.rm = TRUE),
+    total_2021 = sum(`2021`, na.rm = TRUE),
+    total_2024 = sum(`2024`, na.rm = TRUE)
+  ) %>%
+  arrange(desc(total_2024)) %>%   # Arrange data from maximum to minimum for 2024
+  ggplot() +
+  geom_col(aes(x = reorder(Region, -total_2024), y = total_2024), # Corrected y and reordered x
+           fill = "blue") +
+  scale_y_continuous(labels = function(y) format(y, scientific = FALSE, big.mark = ",")) +
+  labs(x = "Region", y = "Total Registered Voters") +
+  theme_minimal()
+
+# Make the chart interactive using plotly
+ggplotly(plt2)
+
+
+```

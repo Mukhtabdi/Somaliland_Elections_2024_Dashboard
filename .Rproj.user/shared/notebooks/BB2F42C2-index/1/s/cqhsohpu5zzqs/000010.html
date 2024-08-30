@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<style>body{background-color:white;}</style>
+<script src="lib/core-js-2.5.3/shim.min.js"></script>
+<script src="lib/react-18.2.0/react.min.js"></script>
+<script src="lib/react-18.2.0/react-dom.min.js"></script>
+<script src="lib/reactwidget-2.0.0/react-tools.umd.cjs"></script>
+<script src="lib/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+<link href="lib/reactable-0.4.4/reactable.css" rel="stylesheet" />
+<script src="lib/reactable-binding-0.4.4/reactable.js"></script>
+
+</head>
+<body>
+<div id="nxonpyoxea" class=".gt_table" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+  <style>#nxonpyoxea table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#nxonpyoxea thead, #nxonpyoxea tbody, #nxonpyoxea tfoot, #nxonpyoxea tr, #nxonpyoxea td, #nxonpyoxea th {
+  border-style: none;
+}
+
+#nxonpyoxea p {
+  margin: 0;
+  padding: 0;
+}
+
+#nxonpyoxea .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 12px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#nxonpyoxea .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#nxonpyoxea .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#nxonpyoxea .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#nxonpyoxea .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#nxonpyoxea .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#nxonpyoxea .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#nxonpyoxea .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#nxonpyoxea .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#nxonpyoxea .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#nxonpyoxea .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#nxonpyoxea .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#nxonpyoxea .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#nxonpyoxea .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#nxonpyoxea .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#nxonpyoxea .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#nxonpyoxea .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#nxonpyoxea .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#nxonpyoxea .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#nxonpyoxea .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#nxonpyoxea .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#nxonpyoxea .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#nxonpyoxea .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#nxonpyoxea .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#nxonpyoxea .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#nxonpyoxea .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#nxonpyoxea .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#nxonpyoxea .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#nxonpyoxea .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#nxonpyoxea .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#nxonpyoxea .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#nxonpyoxea .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#nxonpyoxea .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#nxonpyoxea .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#nxonpyoxea .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#nxonpyoxea .gt_left {
+  text-align: left;
+}
+
+#nxonpyoxea .gt_center {
+  text-align: center;
+}
+
+#nxonpyoxea .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#nxonpyoxea .gt_font_normal {
+  font-weight: normal;
+}
+
+#nxonpyoxea .gt_font_bold {
+  font-weight: bold;
+}
+
+#nxonpyoxea .gt_font_italic {
+  font-style: italic;
+}
+
+#nxonpyoxea .gt_super {
+  font-size: 65%;
+}
+
+#nxonpyoxea .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#nxonpyoxea .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#nxonpyoxea .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#nxonpyoxea .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#nxonpyoxea .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#nxonpyoxea .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#nxonpyoxea .gt_indent_5 {
+  text-indent: 25px;
+}
+
+#nxonpyoxea .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#nxonpyoxea div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
+</style>
+  <div id="nxonpyoxea" class="reactable html-widget" style="color: #333;width:auto;height:auto;"></div>
+  <script type="application/json" data-for="nxonpyoxea">{"x":{"tag":{"name":"Reactable","attribs":{"data":{"Region":["Awdal","Awdal","Awdal","Awdal","Maroodi-Jeex","Maroodi-Jeex","Maroodi-Jeex","Maroodi-Jeex","Saaxil","Saaxil","Togdheer","Togdheer","Togdheer","Sool","Sool","Sool","Sool","Sanaag","Sanaag","Sanaag","Sanaag","Sanaag","Sanaag"],"District":["Saylac","Lughaya","Borama","Baki","Gabiley","Hargeysa","Bali-Gubadle","Salaxley","Berbera","Sheekh","Burco","Oodweyne","Buuhoodle","Caynabo","Laas-Caanood","Xudun","Taleex","Gar-adag","Ceel-Afwayn","Ceerigaabo","Badhan","Dhahar","Laasqoray"],"tot_poll_stations_2024":[25,24,67,37,70,230,24,21,63,27,141,46,22,33,109,33,27,20,33,109,24,25,25]},"columns":[{"id":"Region","name":"Regions","type":"character","minWidth":125,"style":"function(rowInfo, colInfo) {\nconst rowIndex = rowInfo.index + 1\nif (colInfo.id === 'tot_poll_stations_2024' & rowIndex === 1) {\n  return { backgroundColor: '#AAD3E4', color: '#000000' }\n}\n\nif (colInfo.id === 'tot_poll_stations_2024' & rowIndex === 2) {\n  return { backgroundColor: '#ABD4E4', color: '#000000' }\n}\n\nif (colInfo.id === 'tot_poll_stations_2024' & rowIndex === 3) {\n  return { backgroundColor: '#92A7D2', color: '#000000' }\n}\n\nif (colInfo.id === 'tot_poll_stations_2024' & rowIndex === 4) {\n  return { backgroundColor: '#A4C6DF', color: '#000000' }\n}\n\nif (colInfo.id === 'tot_poll_stations_2024' & rowIndex === 5) {\n  return { backgroundColor: '#91A4D1', color: '#000000' }\n}\n\nif (colInfo.id === 'tot_poll_stations_2024' & rowIndex === 6) {\n  return { backgroundColor: '#00008B', color: '#FFFFFF' }\n}\n\nif (colInfo.id === 'tot_poll_stations_2024' & rowIndex === 7) {\n  return { backgroundColor: '#ABD4E4', color: '#000000' }\n}\n\nif (colInfo.id === 'tot_poll_stations_2024' & rowIndex === 8) {\n  return { backgroundColor: '#ACD7E6', color: '#000000' }\n}\n\nif (colInfo.id === 'tot_poll_stations_2024' & rowIndex === 9) {\n  return { backgroundColor: '#95ABD4', color: '#000000' }\n}\n\nif (colInfo.id === 'tot_poll_stations_2024' & rowIndex === 10) {\n  return { backgroundColor: '#A9D1E3', color: '#000000' }\n}\n\nif (colInfo.id === 'tot_poll_stations_2024' & rowIndex === 11) {\n  return { backgroundColor: '#645EB2', color: '#FFFFFF' }\n}\n\nif (colInfo.id === 'tot_poll_stations_2024' & rowIndex === 12) {\n  return { backgroundColor: '#9FBDDB', color: '#000000' }\n}\n\nif (colInfo.id === 'tot_poll_stations_2024' & rowIndex === 13) {\n  return { backgroundColor: '#ACD6E5', color: '#000000' }\n}\n\nif (colInfo.id === 'tot_poll_stations_2024' & rowIndex === 14) {\n  return { backgroundColor: '#A6CAE1', color: '#000000' }\n}\n\nif (colInfo.id === 'tot_poll_stations_2024' & rowIndex === 15) {\n  return { backgroundColor: '#797DC0', color: '#FFFFFF' }\n}\n\nif (colInfo.id === 'tot_poll_stations_2024' & rowIndex === 16) {\n  return { backgroundColor: '#A6CAE1', color: '#000000' }\n}\n\nif (colInfo.id === 'tot_poll_stations_2024' & rowIndex === 17) {\n  return { backgroundColor: '#A9D1E3', color: '#000000' }\n}\n\nif (colInfo.id === 'tot_poll_stations_2024' & rowIndex === 18) {\n  return { backgroundColor: '#ADD8E6', color: '#000000' }\n}\n\nif (colInfo.id === 'tot_poll_stations_2024' & rowIndex === 19) {\n  return { backgroundColor: '#A6CAE1', color: '#000000' }\n}\n\nif (colInfo.id === 'tot_poll_stations_2024' & rowIndex === 20) {\n  return { backgroundColor: '#797DC0', color: '#FFFFFF' }\n}\n\nif (colInfo.id === 'tot_poll_stations_2024' & rowIndex === 21) {\n  return { backgroundColor: '#ABD4E4', color: '#000000' }\n}\n\nif (colInfo.id === 'tot_poll_stations_2024' & rowIndex === 22) {\n  return { backgroundColor: '#AAD3E4', color: '#000000' }\n}\n\nif (colInfo.id === 'tot_poll_stations_2024' & rowIndex === 23) {\n  return { backgroundColor: '#AAD3E4', color: '#000000' }\n}\n\n}","html":true,"align":"left","headerStyle":{"font-weight":"normal"}},{"id":"District","name":"Electoral District","type":"character","minWidth":125,"style":"function(rowInfo, colInfo) {\nconst rowIndex = rowInfo.index + 1\nif (colInfo.id === 'tot_poll_stations_2024' & rowIndex === 1) {\n  return { backgroundColor: '#AAD3E4', color: '#000000' }\n}\n\nif (colInfo.id === 'tot_poll_stations_2024' & rowIndex === 2) {\n  return { backgroundColor: '#ABD4E4', color: '#000000' }\n}\n\nif (colInfo.id === 'tot_poll_stations_2024' & rowIndex === 3) {\n  return { backgroundColor: '#92A7D2', color: '#000000' }\n}\n\nif (colInfo.id === 'tot_poll_stations_2024' & rowIndex === 4) {\n  return { backgroundColor: '#A4C6DF', color: '#000000' }\n}\n\nif (colInfo.id === 'tot_poll_stations_2024' & rowIndex === 5) {\n  return { backgroundColor: '#91A4D1', color: '#000000' }\n}\n\nif (colInfo.id === 'tot_poll_stations_2024' & rowIndex === 6) {\n  return { backgroundColor: '#00008B', color: '#FFFFFF' }\n}\n\nif (colInfo.id === 'tot_poll_stations_2024' & rowIndex === 7) {\n  return { backgroundColor: '#ABD4E4', color: '#000000' }\n}\n\nif (colInfo.id === 'tot_poll_stations_2024' & rowIndex === 8) {\n  return { backgroundColor: '#ACD7E6', color: '#000000' }\n}\n\nif (colInfo.id === 'tot_poll_stations_2024' & rowIndex === 9) {\n  return { backgroundColor: '#95ABD4', color: '#000000' }\n}\n\nif (colInfo.id === 'tot_poll_stations_2024' & rowIndex === 10) {\n  return { backgroundColor: '#A9D1E3', color: '#000000' }\n}\n\nif (colInfo.id === 'tot_poll_stations_2024' & rowIndex === 11) {\n  return { backgroundColor: '#645EB2', color: '#FFFFFF' }\n}\n\nif (colInfo.id === 'tot_poll_stations_2024' & rowIndex === 12) {\n  return { backgroundColor: '#9FBDDB', color: '#000000' }\n}\n\nif (colInfo.id === 'tot_poll_stations_2024' & rowIndex === 13) {\n  return { backgroundColor: '#ACD6E5', color: '#000000' }\n}\n\nif (colInfo.id === 'tot_poll_stations_2024' & rowIndex === 14) {\n  return { backgroundColor: '#A6CAE1', color: '#000000' }\n}\n\nif (colInfo.id === 'tot_poll_stations_2024' & rowIndex === 15) {\n  return { backgroundColor: '#797DC0', color: '#FFFFFF' }\n}\n\nif (colInfo.id === 'tot_poll_stations_2024' & rowIndex === 16) {\n  return { backgroundColor: '#A6CAE1', color: '#000000' }\n}\n\nif (colInfo.id === 'tot_poll_stations_2024' & rowIndex === 17) {\n  return { backgroundColor: '#A9D1E3', color: '#000000' }\n}\n\nif (colInfo.id === 'tot_poll_stations_2024' & rowIndex === 18) {\n  return { backgroundColor: '#ADD8E6', color: '#000000' }\n}\n\nif (colInfo.id === 'tot_poll_stations_2024' & rowIndex === 19) {\n  return { backgroundColor: '#A6CAE1', color: '#000000' }\n}\n\nif (colInfo.id === 'tot_poll_stations_2024' & rowIndex === 20) {\n  return { backgroundColor: '#797DC0', color: '#FFFFFF' }\n}\n\nif (colInfo.id === 'tot_poll_stations_2024' & rowIndex === 21) {\n  return { backgroundColor: '#ABD4E4', color: '#000000' }\n}\n\nif (colInfo.id === 'tot_poll_stations_2024' & rowIndex === 22) {\n  return { backgroundColor: '#AAD3E4', color: '#000000' }\n}\n\nif (colInfo.id === 'tot_poll_stations_2024' & rowIndex === 23) {\n  return { backgroundColor: '#AAD3E4', color: '#000000' }\n}\n\n}","html":true,"align":"left","headerStyle":{"font-weight":"normal"}},{"id":"tot_poll_stations_2024","name":"Total Polling Stations","type":"numeric","minWidth":125,"style":"function(rowInfo, colInfo) {\nconst rowIndex = rowInfo.index + 1\nif (colInfo.id === 'tot_poll_stations_2024' & rowIndex === 1) {\n  return { backgroundColor: '#AAD3E4', color: '#000000' }\n}\n\nif (colInfo.id === 'tot_poll_stations_2024' & rowIndex === 2) {\n  return { backgroundColor: '#ABD4E4', color: '#000000' }\n}\n\nif (colInfo.id === 'tot_poll_stations_2024' & rowIndex === 3) {\n  return { backgroundColor: '#92A7D2', color: '#000000' }\n}\n\nif (colInfo.id === 'tot_poll_stations_2024' & rowIndex === 4) {\n  return { backgroundColor: '#A4C6DF', color: '#000000' }\n}\n\nif (colInfo.id === 'tot_poll_stations_2024' & rowIndex === 5) {\n  return { backgroundColor: '#91A4D1', color: '#000000' }\n}\n\nif (colInfo.id === 'tot_poll_stations_2024' & rowIndex === 6) {\n  return { backgroundColor: '#00008B', color: '#FFFFFF' }\n}\n\nif (colInfo.id === 'tot_poll_stations_2024' & rowIndex === 7) {\n  return { backgroundColor: '#ABD4E4', color: '#000000' }\n}\n\nif (colInfo.id === 'tot_poll_stations_2024' & rowIndex === 8) {\n  return { backgroundColor: '#ACD7E6', color: '#000000' }\n}\n\nif (colInfo.id === 'tot_poll_stations_2024' & rowIndex === 9) {\n  return { backgroundColor: '#95ABD4', color: '#000000' }\n}\n\nif (colInfo.id === 'tot_poll_stations_2024' & rowIndex === 10) {\n  return { backgroundColor: '#A9D1E3', color: '#000000' }\n}\n\nif (colInfo.id === 'tot_poll_stations_2024' & rowIndex === 11) {\n  return { backgroundColor: '#645EB2', color: '#FFFFFF' }\n}\n\nif (colInfo.id === 'tot_poll_stations_2024' & rowIndex === 12) {\n  return { backgroundColor: '#9FBDDB', color: '#000000' }\n}\n\nif (colInfo.id === 'tot_poll_stations_2024' & rowIndex === 13) {\n  return { backgroundColor: '#ACD6E5', color: '#000000' }\n}\n\nif (colInfo.id === 'tot_poll_stations_2024' & rowIndex === 14) {\n  return { backgroundColor: '#A6CAE1', color: '#000000' }\n}\n\nif (colInfo.id === 'tot_poll_stations_2024' & rowIndex === 15) {\n  return { backgroundColor: '#797DC0', color: '#FFFFFF' }\n}\n\nif (colInfo.id === 'tot_poll_stations_2024' & rowIndex === 16) {\n  return { backgroundColor: '#A6CAE1', color: '#000000' }\n}\n\nif (colInfo.id === 'tot_poll_stations_2024' & rowIndex === 17) {\n  return { backgroundColor: '#A9D1E3', color: '#000000' }\n}\n\nif (colInfo.id === 'tot_poll_stations_2024' & rowIndex === 18) {\n  return { backgroundColor: '#ADD8E6', color: '#000000' }\n}\n\nif (colInfo.id === 'tot_poll_stations_2024' & rowIndex === 19) {\n  return { backgroundColor: '#A6CAE1', color: '#000000' }\n}\n\nif (colInfo.id === 'tot_poll_stations_2024' & rowIndex === 20) {\n  return { backgroundColor: '#797DC0', color: '#FFFFFF' }\n}\n\nif (colInfo.id === 'tot_poll_stations_2024' & rowIndex === 21) {\n  return { backgroundColor: '#ABD4E4', color: '#000000' }\n}\n\nif (colInfo.id === 'tot_poll_stations_2024' & rowIndex === 22) {\n  return { backgroundColor: '#AAD3E4', color: '#000000' }\n}\n\nif (colInfo.id === 'tot_poll_stations_2024' & rowIndex === 23) {\n  return { backgroundColor: '#AAD3E4', color: '#000000' }\n}\n\n}","cell":["25","24","67","37","70","230","24","21","63","27","141","46","22","33","109","33","27","20","33","109","24","25","25"],"html":true,"align":"right","headerStyle":{"font-weight":"normal"}}],"filterable":true,"defaultPageSize":10,"showPageSizeOptions":false,"pageSizeOptions":[10,25,50,100],"paginationType":"numbers","showPagination":true,"showPageInfo":true,"minRows":1,"height":"auto","theme":{"color":"#333333","backgroundColor":"#FFFFFF","stripedColor":"rgba(128,128,128,0.05)","style":{"fontFamily":"system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif"},"tableStyle":{"borderTopStyle":"solid","borderTopWidth":"2px","borderTopColor":"#D3D3D3"},"headerStyle":{"borderBottomStyle":"solid","borderBottomWidth":"2px","borderBottomColor":"#D3D3D3"}},"elementId":"nxonpyoxea","dataKey":"fa00caadfa70dcaf84c93a5012cfe294"},"children":[]},"class":"reactR_markup"},"evals":["tag.attribs.columns.0.style","tag.attribs.columns.1.style","tag.attribs.columns.2.style"],"jsHooks":[]}</script>
+</div>
+</body>
+</html>

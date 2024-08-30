@@ -1,0 +1,6 @@
+"0","tot_regis_2024 <- sum(voters$`2024`, na.rm = TRUE)"
+"0","valueBox("
+"0","  value = scales::comma(tot_regis_2024),    "
+"0","  caption = ""Total Registered Voters"",        "
+"0","  color = ""blue""                                "
+"0",")"

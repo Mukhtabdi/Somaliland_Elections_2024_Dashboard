@@ -1,0 +1,5 @@
+"0","# Get electoral districts"
+"0","elecdist <- voters %>% "
+"0","  select(Region, long_X, Lat_Y, District) %>% #change df to sf using coords"
+"0","  drop_na() %>% "
+"0","  st_as_sf(coords = c(2:3), crs = 4326)"

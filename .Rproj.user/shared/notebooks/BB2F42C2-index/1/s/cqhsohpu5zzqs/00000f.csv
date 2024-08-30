@@ -1,0 +1,28 @@
+"0","voters %>% "
+"0","  select(Region, District, tot_poll_stations_2024) %>% "
+"0","  gt() %>% "
+"0","  opt_interactive(use_filters = TRUE) %>% "
+"0","  tab_options(table.font.size=12) %>% "
+"0","   cols_label(Region = ""Regions"","
+"0","              District = ""Electoral District"","
+"0","              tot_poll_stations_2024 = ""Total Polling Stations"") %>%"
+"0","  tab_style(style = cell_text(weight = ""bold""),"
+"0","            locations = cells_column_labels(everything())) %>%"
+"0","  fmt_number(columns = vars(tot_poll_stations_2024),"
+"0","             decimals = 0) %>%"
+"0","  data_color(columns = vars(tot_poll_stations_2024),"
+"0","             colors = scales::col_numeric(palette = c(""lightblue"", ""darkblue""),"
+"0","                                          domain = NULL))"
+"2","Warning:"
+"2"," [38;5;232mSince gt v0.3.0, `columns = vars(...)` has been deprecated.
+[36m•[38;5;232m Please use `columns = c(...)` instead.[39m
+"
+"2","Warning:"
+"2"," [38;5;232mSince gt v0.9.0, the `colors` argument has been deprecated.
+[36m•[38;5;232m Please use the `fn` argument instead.[39m
+[90mThis warning is displayed once every 8 hours.[39m
+"
+"2","Warning:"
+"2"," [38;5;232mSince gt v0.3.0, `columns = vars(...)` has been deprecated.
+[36m•[38;5;232m Please use `columns = c(...)` instead.[39m
+"
